@@ -63,3 +63,13 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "activeadmin", "4.0.0.beta15"
+
+gem "tailwindcss-ruby", "~> 3.4"
+
+gem "devise", "~> 4.9"
+
+gem "cssbundling-rails", "~> 1.4"
+
+gem "activeadmin_assets", "~> 1.0"
