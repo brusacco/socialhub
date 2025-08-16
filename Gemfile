@@ -56,6 +56,11 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "rubocop"
+  gem "rubocop-capybara"
+  gem "rubocop-performance"
+  gem "rubocop-rspec"
+  gem "rubocop-rails"
 end
 
 group :test do

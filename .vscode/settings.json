@@ -1,0 +1,6 @@
+{
+  "[ruby]": {
+    "editor.formatOnSave": true
+  },
+  "ruby.formatting.provider": "rubocop"
+}
