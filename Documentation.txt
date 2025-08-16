@@ -1,0 +1,2 @@
+Rails 8 + ActiveAdmin Beta 4 Fix
+https://railsdrop.com/2025/07/15/
