@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class CreateProfiles < ActiveRecord::Migration[6.1]
   def change
     create_table :profiles do |t|
       t.string  :name, null: false                   # display/canonical name
       t.string  :slug, null: false                   # stable identifier for URLs
-      t.integer :profile_type, null: false, default: 0       # enum: person=0, organization=1
+      t.integer :profile_type, null: false, default: 0 # enum: person=0, organization=1
       t.timestamps
     end
     add_index :profiles, :slug, unique: true

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateActiveAdminComments < ActiveRecord::Migration[8.0]
   def self.up
     create_table :active_admin_comments do |t|
@@ -7,7 +9,7 @@ class CreateActiveAdminComments < ActiveRecord::Migration[8.0]
       t.references :author, polymorphic: true
       t.timestamps
     end
-    add_index :active_admin_comments, [ :namespace ]
+    add_index :active_admin_comments, [:namespace]
   end
 
   def self.down
