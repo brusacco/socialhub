@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_16_180000) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_17_123101) do
   create_table "active_admin_comments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -47,4 +47,20 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_16_180000) do
     t.index ["profile_type"], name: "index_profiles_on_profile_type"
     t.index ["slug"], name: "index_profiles_on_slug", unique: true
   end
+
+  create_table "social_accounts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "network", default: 0, null: false
+    t.string "uid"
+    t.string "username"
+    t.string "display_name"
+    t.json "data"
+    t.integer "followers", default: 0, null: false
+    t.integer "following", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_social_accounts_on_profile_id"
+  end
+
+  add_foreign_key "social_accounts", "profiles"
 end
