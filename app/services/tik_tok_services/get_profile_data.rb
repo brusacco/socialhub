@@ -1,8 +1,14 @@
 # frozen_string_literal: true
 
-module InstagramServices
+require 'httparty'
+
+module TikTokServices
   class GetProfileData < ApplicationService
     include HTTParty
+
+    API_KEY = 'srI2PsFUSz6VPLLcHwr2VqfFDjDTXXUkMv1xt1aJwiwQoZ9g'
+
+    base_uri 'https://api.tikapi.io/public'
 
     def initialize(username)
       @username = username
@@ -11,13 +17,7 @@ module InstagramServices
     def call
       return handle_error('No username set') unless @username
 
-      url = "https://www.instagram.com/api/v1/users/web_profile_info/?username=#{@username}"
-      api_url = "http://api.scrape.do?token=ed138ed418924138923ced2b81e04d53&url=#{CGI.escape(url)}"
-
-      headers = { 'Content-Type': 'application/x-www-form-urlencoded', 'x-ig-app-id': '936619743392459' }
-
-      response = get(api_url, headers:, timeout: 60)
-
+      response = self.class.get('/check', { query: { username: @username }, headers: { 'X-API-KEY' => API_KEY } })
       data = JSON.parse(response.body)
       handle_success(data)
     rescue StandardError => e
