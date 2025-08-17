@@ -1,2 +1,6 @@
 Rails 8 + ActiveAdmin Beta 4 Fix
 https://railsdrop.com/2025/07/15/
+
+MCP Servers
+https://github.com/upstash/context7
+https://gitmcp.io/
