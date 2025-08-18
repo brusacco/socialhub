@@ -69,7 +69,7 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem 'activeadmin', '4.0.0.beta15'
+gem 'activeadmin', '4.0.0.beta16'
 
 gem 'tailwindcss-ruby', '~> 3.4'
 
