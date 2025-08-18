@@ -4,8 +4,8 @@ require 'httparty'
 require 'json'
 require 'uri'
 
-module TwitterServer
-  class GetPostsData < ApplicationService
+module TwitterServices
+  class GetProfileData < ApplicationService
     include HTTParty
 
     base_uri 'https://api.x.com'

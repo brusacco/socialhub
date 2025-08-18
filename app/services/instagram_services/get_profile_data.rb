@@ -16,7 +16,7 @@ module InstagramServices
 
       headers = { 'Content-Type': 'application/x-www-form-urlencoded', 'x-ig-app-id': '936619743392459' }
 
-      response = get(api_url, headers:, timeout: 60)
+      response = self.class.get(api_url, headers:, timeout: 60)
 
       data = JSON.parse(response.body)
       handle_success(data)

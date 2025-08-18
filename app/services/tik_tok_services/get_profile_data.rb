@@ -17,7 +17,7 @@ module TikTokServices
     def call
       return handle_error('No username set') unless @username
 
-      response = self.class.get('/check', { query: { username: @username }, headers: { 'X-API-KEY' => API_KEY } })
+      response = self.class.get('/check', { query: { username: @username }, headers: { 'X-API-KEY': API_KEY } })
       data = JSON.parse(response.body)
       handle_success(data)
     rescue StandardError => e
