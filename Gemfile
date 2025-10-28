@@ -71,7 +71,7 @@ end
 
 gem 'activeadmin', '4.0.0.beta15'
 
-gem 'tailwindcss-ruby', '~> 3.4'
+gem 'tailwindcss-ruby', '~> 4.1'
 
 gem 'devise', '~> 4.9'
 
